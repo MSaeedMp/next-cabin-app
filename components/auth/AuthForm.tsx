@@ -9,14 +9,14 @@ import { socialSignInAction } from "@/actions/user-action";
 import { CredentialButton } from "../buttons/CredentialButton";
 import { SocialButton } from "../buttons/SocialButton";
 
-interface AuthFormProps {
+type AuthFormProps = {
   title: string;
   type: "signin" | "signup";
   action: any;
   formInputs: React.ReactNode;
   linkText: string;
   linkHref: string;
-}
+};
 
 const AuthForm = ({
   title,
