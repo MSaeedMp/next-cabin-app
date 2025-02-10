@@ -1,0 +1,137 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+}
+
+model User {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  name      String
+  email     String   @unique
+  password  String
+  image     String?
+  role      String   @default("user")
+
+  // Optional fields
+  phoneNumber String?
+  displayName String?
+  nationality String?
+  nationalId  String?
+  address     String?
+
+  // Relations 
+  cabins    Cabin[]
+  reserves  Reserve[]
+  favorites Favorite[]
+  Review    Review[]
+}
+
+enum CabinFeature {
+  NON_SMOKING
+  DISABLED_ACCESS
+  WIFI
+  PARKING
+  RECEPTION_24H
+  TERRACE
+  ELEVATOR
+  BAR
+  HEATING
+  BREAKFAST_INCLUDED
+}
+
+enum CabinType {
+  CITY
+  BEACH
+  SKI
+  OUTDOOR
+  RELAXATION
+  ROMANCE
+  EAT
+}
+
+model Cabin {
+  id           String         @id @default(uuid())
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  name         String
+  maxCapacity  Int
+  cabinType    CabinType[]
+  numRooms     Int
+  featured     Boolean        @default(false)
+  regularPrice Decimal        @db.Decimal(10, 2)
+  discount     Decimal?       @db.Decimal(10, 2)
+  description  String
+  image        String
+  country      String
+  city         String
+  latitude     Decimal        @db.Decimal(9, 6)
+  longitude    Decimal        @db.Decimal(9, 6)
+  features     CabinFeature[]
+  userId       String
+  User         User           @relation(fields: [userId], references: [id])
+
+  Favorite Favorite[]
+  Reserve  Reserve[]
+  Review   Review[]
+}
+
+model Favorite {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  cabinId   String
+  cabin     Cabin    @relation(fields: [cabinId], references: [id], onDelete: Cascade)
+}
+
+enum ReserveStatus {
+  CONFIRMED
+  UNCONFIRMED
+  CHECKED_IN
+  CHECKED_OUT
+  NO_SHOW
+}
+
+model Reserve {
+  id         String        @id @default(uuid())
+  createdAt  DateTime      @default(now())
+  updatedAt  DateTime      @updatedAt
+  userId     String
+  user       User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  cabinId    String
+  cabin      Cabin         @relation(fields: [cabinId], references: [id], onDelete: Cascade)
+  startDate  DateTime
+  endDate    DateTime
+  status     ReserveStatus
+  isPaid     Boolean       @default(true)
+  totalPrice Decimal       @db.Decimal(10, 2)
+}
+
+model Review {
+  id             String   @id @default(uuid())
+  userId         String
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  rating         Int
+  comment        String
+  title          String
+  authorName     String
+  authorImageUrl String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  cabin          Cabin    @relation(fields: [cabinId], references: [id], onDelete: Cascade)
+  cabinId        String
+}
