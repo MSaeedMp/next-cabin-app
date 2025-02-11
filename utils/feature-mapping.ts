@@ -12,7 +12,6 @@ import {
   FaCoffee,
   FaRegCheckSquare,
 } from "react-icons/fa";
-import { IconType } from "react-icons/lib";
 
 export const cabinFacilities = [
   { id: 2, name: "Non smoking", key: "NON_SMOKING", icon: FaSmokingBan },
@@ -55,7 +54,7 @@ type featureListType = {
   id: number;
   name: string;
   key: string;
-  icon?: IconType;
+  icon: React.ComponentType<{ className?: string }>;
 };
 
 export const getFeatureNamesById = (
@@ -79,7 +78,7 @@ export const getFeatureNamesAndIconsByKeys = (
 export const getFeatureIconsByKeys = (
   featureList: featureListType[],
   keys: CabinFeature[]
-)=> {
+) => {
   return featureList
     .filter((feature) => keys.includes(feature.key as CabinFeature))
     .map((feature) => feature.icon);
