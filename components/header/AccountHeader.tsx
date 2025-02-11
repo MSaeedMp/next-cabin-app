@@ -32,7 +32,7 @@ const AccountHeader = async () => {
               Hello {firstName}
             </h1>
             <h4 className="text-white text-sm sm:text-base lg:text-lg font-semibold">
-              Welcome to next store
+              Welcome to Next Cabin
             </h4>
           </div>
         </div>

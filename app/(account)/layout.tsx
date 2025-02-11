@@ -12,7 +12,7 @@ const AccountLayout = ({
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-[16rem_1fr] gap-x-6">
           <SideAccountBox />
-          <main className="w-full overflow-hidden lg:min-h-[calc(100vh-25rem)] min-h-[calc(100vh-20rem)]">{children}</main>
+          <main className="w-full overflow-hidden min-h-[calc(100vh-10rem)]">{children}</main>
         </div>
       </Container>
       <Footer />
