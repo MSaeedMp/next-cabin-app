@@ -59,14 +59,9 @@ const FormContainer = <T extends FieldValues>({
     const result = await action(formData); // Server-side validation
     if (!result || result.status === "success") {
       if (result?.status === "success") {
-        // toast({
-        //   variant: "success",
-        //   title: "Success",
-        //   description: result.message,
-        // });
         toast({
           description: result.message,
-          className: "bg-primary text-white text-base",
+          className: "bg-primary text-white text-base border-primary",
         });
       }
 
@@ -81,14 +76,9 @@ const FormContainer = <T extends FieldValues>({
       }
     }
     if (result && result.status === "error") {
-      // toast({
-      //   variant: "destructive",
-      //   title: "Error",
-      //   description: result.message,
-      // });
       toast({
         description: result.message,
-        className: "bg-primary text-white text-base",
+        className: "bg-primary text-white text-base border-primary",
       });
     }
   };

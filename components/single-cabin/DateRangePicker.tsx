@@ -23,8 +23,8 @@ const DateRangePicker = ({ reservedDates }: { reservedDates: Date[] }) => {
       numberOfMonths={2}
       fromDate={new Date()}
       toYear={new Date().getFullYear() + 5}
-      captionLayout="buttons"
-      className="rounded-xl border shadow-lg border-stone-200 max-w-[280px] sm:max-w-[520px] p-6 sm:mx-0 mx-auto"
+      captionLayout="label"
+      className="rounded-xl border p-6 shadow-md mx-auto"
       disabled={(curDate) =>
         isPast(curDate) ||
         reservedDates.some((date) => isSameDay(date, curDate))
