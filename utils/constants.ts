@@ -42,7 +42,7 @@ export const quickAccessLinks = [
   },
   {
     name: "Promotions",
-    href: "/promotions",
+    href: "/promotion",
     icon: IoPricetagsOutline,
   },
 ];
