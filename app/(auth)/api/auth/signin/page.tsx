@@ -22,7 +22,7 @@ const SignInPage = () => {
             name="password"
             type="password"
             label="Password"
-            defaultValue="password"
+            defaultValue="demoAccount1234"
             placeholder="Enter your password"
             autocomplete="current-password"
           />
