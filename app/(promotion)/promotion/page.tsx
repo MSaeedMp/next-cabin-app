@@ -1,10 +1,10 @@
-import { fetchPromotedCabins } from "@/actions/cabin-action";
 import LoadingCard from "@/components/Global/LoadingCard";
 import SectionSubTitle from "@/components/Global/SectionSubTitle";
 import SectionTitle from "@/components/Global/SectionTitle";
 import CardGridContainerWithFetch from "@/components/layout/CardGridContainer";
 import Container from "@/components/layout/Container";
 import PromotedCabinCard from "@/components/promotion/PromotedCabinCard";
+import { fetchPromotedCabins } from "@/actions/cabin-action";
 import { Suspense } from "react";
 
 const PromotionPage = async () => {
