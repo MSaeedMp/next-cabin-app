@@ -13,12 +13,12 @@ type HeaderProps = {
 const Header = ({ title, subtitle, bgGradient }: HeaderProps) => {
   return (
     <header className={bgGradient}>
-      <Container className="relative pb-20">
+      <Container className="relative pb-16">
         <div className="flex justify-between items-center">
           <Logo type="white" />
           <Navigation />
         </div>
-        <div className="flex flex-col gap-4 mt-10">
+        <div className="flex flex-col gap-4 mt-7">
           {title && (
             <h1
               className="sm:text-7xl text-5xl font-bold font-archivo-narrow text-white"
@@ -28,7 +28,7 @@ const Header = ({ title, subtitle, bgGradient }: HeaderProps) => {
             </h1>
           )}
           {subtitle && (
-            <h3 className="text-xl sm:text-2xl max-w-[300px] md:max-w-[650px] font-[400] text-white font-archivo-narrow">
+            <h3 className="text-xl sm:text-2xl max-w-[300px] md:max-w-[700px] font-[400] text-white font-archivo-narrow">
               {subtitle}
             </h3>
           )}
