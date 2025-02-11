@@ -3,7 +3,7 @@
 import db from "@/utils/db";
 import { reviewSchema, validateWithZodSchema } from "@/lib/schemas";
 import { Review } from "@prisma/client";
-import { getAuthUser, sendErrorToast, sendSuccessToast } from "./utils-action";
+import { getAuthUser, sendErrorToast, sendSuccessToast } from "./util-action";
 import { ActionResponseType } from "@/utils/types";
 import { revalidatePath, unstable_cache } from "next/cache";
 

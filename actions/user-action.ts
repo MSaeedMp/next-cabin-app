@@ -9,7 +9,7 @@ import {
 } from "@/lib/schemas";
 import { redirect } from "next/navigation";
 import { auth, signIn, signOut } from "@/lib/auth";
-import { sendErrorToast, sendSuccessToast } from "./utils-action";
+import { sendErrorToast, sendSuccessToast } from "./util-action";
 import { User } from "@prisma/client";
 import { convertEmptyStringsToNull } from "@/utils/helper";
 

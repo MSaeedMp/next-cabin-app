@@ -1,5 +1,5 @@
 import { findUserById } from "@/actions/user-action";
-import { getCountriesNameCode } from "@/actions/utils-action";
+import { getCountriesNameCode } from "@/actions/util-action";
 import UpdateProfileForm from "@/components/account/UpdateProfileForm";
 import SectionSubTitle from "@/components/Global/SectionSubTitle";
 import SectionTitle from "@/components/Global/SectionTitle";

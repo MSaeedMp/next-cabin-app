@@ -2,7 +2,7 @@
 import db from "@/utils/db";
 import { Prisma, Reserve } from "@prisma/client";
 import { eachDayOfInterval } from "date-fns";
-import { sendErrorToast, sendSuccessToast } from "./utils-action";
+import { sendErrorToast, sendSuccessToast } from "./util-action";
 import { revalidatePath } from "next/cache";
 import { ActionResponseType } from "@/utils/types";
 import { auth } from "@/lib/auth";
