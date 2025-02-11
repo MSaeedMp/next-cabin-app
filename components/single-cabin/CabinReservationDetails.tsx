@@ -65,7 +65,7 @@ const CabinReservationDetails = ({
             className="flex items-center gap-x-2 rounded-xl text-primary font-medium "
             key={index}
           >
-            <Icon className="w-4 h-4" />
+            {Icon && <Icon className="w-4 h-4" />}
             {name}
           </li>
         ))}

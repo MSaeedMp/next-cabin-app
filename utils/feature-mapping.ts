@@ -54,7 +54,7 @@ type featureListType = {
   id: number;
   name: string;
   key: string;
-  icon: React.ComponentType<{ className?: string }>;
+  icon?: React.ComponentType<{ className?: string }>;
 };
 
 export const getFeatureNamesById = (
