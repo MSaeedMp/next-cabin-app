@@ -48,12 +48,15 @@ export const fetchCabins = async ({
     };
   }
 
-  if (maxPrice && minPrice) {
-    whereClause.regularPrice = { lt: maxPrice, gt: minPrice };
-  } else if (maxPrice) {
-    whereClause.regularPrice = { lt: maxPrice };
-  } else if (minPrice) {
-    whereClause.regularPrice = { gt: minPrice };
+  const minPriceVal = Number(minPrice);
+  const maxPriceVal = Number(maxPrice);
+
+  if (maxPriceVal && minPriceVal) {
+    whereClause.regularPrice = { lt: maxPriceVal, gt: minPriceVal };
+  } else if (maxPriceVal) {
+    whereClause.regularPrice = { lt: maxPriceVal };
+  } else if (minPriceVal) {
+    whereClause.regularPrice = { gt: minPriceVal };
   }
 
   if (people) {
