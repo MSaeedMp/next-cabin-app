@@ -46,7 +46,7 @@ export default TextExpander;
 
 function ButtonContent({ isExpanded }: { isExpanded: boolean }) {
   return (
-    <div className="flex items-center gap-1">
+    <div className="flex items-center gap-1 text-primary">
       <span>{isExpanded ? "Show Less" : "Show More"}</span>
       {isExpanded ? <IoIosArrowUp /> : <IoIosArrowDown />}
     </div>

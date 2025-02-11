@@ -1,8 +1,10 @@
+import TextExpander from "../Global/TextExpander";
+
 const SingleCabinDescription = ({ description }: { description: string }) => {
   return (
     <div>
       <p className="text-lg font-semibold my-4 text-primary">{description}</p>
-      <p className="leading-loose">
+      <TextExpander max={100} className="leading-loose">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolores
         mollitia amet sit molestiae recusandae fugiat neque quis. Sapiente
         eligendi culpa, deserunt molestias, ea repudiandae ad accusantium esse
@@ -26,7 +28,7 @@ const SingleCabinDescription = ({ description }: { description: string }) => {
         Pariatur dolor ipsam nam maxime exercitationem beatae, dignissimos,
         similique accusamus iusto a ullam consequuntur quae minima minus, sed
         tenetur.
-      </p>
+      </TextExpander>
     </div>
   );
 };
