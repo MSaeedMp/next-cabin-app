@@ -82,7 +82,7 @@ const HomePage = () => {
         </ScrollListWithFetch>
       </ScrollBox>
 
-      <SectionTitle className="mt-10 mb-4">Promotions </SectionTitle>
+      <SectionTitle className="mt-10 mb-4">Promotions</SectionTitle>
       <SectionSubTitle className="mb-4">
         Unlock member-only discounts, special offers, and more
       </SectionSubTitle>
