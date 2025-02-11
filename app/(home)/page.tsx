@@ -90,7 +90,7 @@ const HomePage = () => {
         heading="Sign up and save money"
         subHeading="Join us to benefit from our special offers"
         buttonText="Register now"
-        to="/auth/signup"
+        to="/api/auth/signup"
         imageSrc="/teamwork.png"
         imageAlt="Join us image"
       />
