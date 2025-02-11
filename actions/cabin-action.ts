@@ -183,9 +183,5 @@ export const fetchCabinLocaitons = async (): Promise<Location[]> => {
     },
   });
 
-  return cabins.map((cabin) => ({
-    ...cabin,
-    latitude: cabin.latitude.toNumber(),
-    longitude: cabin.longitude.toNumber(),
-  }));
+  return cabins;
 };

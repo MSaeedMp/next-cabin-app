@@ -56,7 +56,7 @@ const SingleCabinPage = async ({
           cabinId={cabinId}
         />
         <SingleCabinContainer
-          center={[latitude.toNumber(), longitude.toNumber()]}
+          center={[latitude, longitude]}
           name={name}
           image={image}
         />

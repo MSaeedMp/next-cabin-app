@@ -3,6 +3,7 @@
 import { useMapContext } from "@/hooks/useMapContext";
 import DynamicMap from "./DynamicMap";
 import CloseButton from "../buttons/CloseButton";
+import ModalContainer from "../Global/ModalContainer";
 
 const MapModal = () => {
   const { closeMap, showMap, center } = useMapContext();
@@ -10,10 +11,7 @@ const MapModal = () => {
   if (!showMap) return null;
 
   return (
-    <div
-      className={
-        "fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-[10000]"
-      }
+    <ModalContainer
       onClick={closeMap}
     >
       <div
@@ -23,7 +21,7 @@ const MapModal = () => {
         <DynamicMap center={center} zoom={13} />
         <CloseButton onClick={closeMap} className="absolute top-2 right-2" />
       </div>
-    </div>
+    </ModalContainer>
   );
 };
 

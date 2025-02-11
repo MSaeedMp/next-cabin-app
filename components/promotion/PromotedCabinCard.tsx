@@ -39,7 +39,7 @@ const PromotedCabinCard = ({ cabin }: { cabin?: Cabin }) => {
             <div className="p-2">
               <CabinCardMainHeadnig heading={name} />
               <CabinCardLocation
-                center={[latitude.toNumber(), longitude.toNumber()]}
+                center={[latitude, longitude]}
                 country={country}
                 city={city}
               />

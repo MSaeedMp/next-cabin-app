@@ -71,14 +71,14 @@ model Cabin {
   cabinType    CabinType[]
   numRooms     Int
   featured     Boolean        @default(false)
-  regularPrice Decimal        @db.Decimal(10, 2)
-  discount     Decimal?       @db.Decimal(10, 2)
+  regularPrice Int
+  discount     Int?
   description  String
   image        String
   country      String
   city         String
-  latitude     Decimal        @db.Decimal(9, 6)
-  longitude    Decimal        @db.Decimal(9, 6)
+  latitude     Float
+  longitude    Float
   features     CabinFeature[]
   userId       String
   User         User           @relation(fields: [userId], references: [id])
@@ -118,7 +118,7 @@ model Reserve {
   endDate    DateTime
   status     ReserveStatus
   isPaid     Boolean       @default(true)
-  totalPrice Decimal       @db.Decimal(10, 2)
+  totalPrice Int
 }
 
 model Review {

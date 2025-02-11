@@ -60,7 +60,7 @@ const ReservationCard = ({ cabin }: { cabin: CustomCabinType }) => {
             <CabinCardLocation
               country={country}
               city={city}
-              center={[latitude.toNumber(), longitude.toNumber()]}
+              center={[latitude, longitude]}
             />
           </div>
           <div className="flex justify-between gap-4 mt-10">

@@ -28,7 +28,7 @@ const CabinCardReversed = ({ cabin }: { cabin?: Cabin }) => {
             <div className="p-2">
               <CabinCardHeading heading={name} />
               <CabinCardLocation
-                center={[latitude.toNumber(), longitude.toNumber()]}
+                center={[latitude, longitude]}
                 country={country}
                 city={city}
               />

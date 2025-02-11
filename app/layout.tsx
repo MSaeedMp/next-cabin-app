@@ -5,6 +5,7 @@ import Providers from "./providers";
 import { SessionProvider } from "next-auth/react";
 import AppSidebar from "@/components/Global/AppSidebar";
 import MapModal from "@/components/map/MapModal";
+import AuthModal from "@/components/auth/AuthModal";
 
 const interFont = Inter({
   subsets: ["latin"],
@@ -62,6 +63,7 @@ export default async function RootLayout({
           <Providers>
             <AppSidebar />
             <MapModal />
+            <AuthModal />
             <div className="w-svw mx-auto overflow-x-hidden">{children}</div>
           </Providers>
         </body>

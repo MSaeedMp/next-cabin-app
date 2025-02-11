@@ -8,8 +8,11 @@ import CabinCardFeatures from "./CabinCardFeatures";
 import CabinCardDetails from "./CabinCardDetails";
 import CabinCardLinkHeading from "./CabinCardLinkHeading";
 import CabinCardLocation from "../home/CabinCardLocation";
+import EmptyCard from "../Global/EmptyCard";
 
-const CabinListCard = ({ cabin }: { cabin: Cabin }) => {
+const CabinListCard = ({ cabin }: { cabin?: Cabin }) => {
+  if (!cabin) return <EmptyCard />;
+
   const {
     id: cabinId,
     maxCapacity,
@@ -24,7 +27,7 @@ const CabinListCard = ({ cabin }: { cabin: Cabin }) => {
     longitude,
     latitude,
   } = cabin;
-  const price = Number(regularPrice) - (Number(discount) ?? 0);
+  const price = regularPrice - (discount ?? 0);
 
   return (
     <Card className="p-4 shadow-none">
@@ -55,7 +58,7 @@ const CabinListCard = ({ cabin }: { cabin: Cabin }) => {
             <CabinCardLocation
               country={country}
               city={city}
-              center={[latitude.toNumber(), longitude.toNumber()]}
+              center={[latitude, longitude]}
             />
           </div>
           <div className="flex justify-between gap-4 mt-10">

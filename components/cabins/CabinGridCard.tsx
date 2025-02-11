@@ -1,3 +1,5 @@
+"use server";
+
 import PrimaryLinkButton from "../buttons/LinkButton";
 import Image from "next/image";
 import FavoriteToggleButton from "../favorite/FavoriteToggleButton";
@@ -24,7 +26,7 @@ const CabinGridCard = ({ cabin }: { cabin: Cabin }) => {
     longitude,
     latitude,
   } = cabin;
-  const price = Number(regularPrice) - (Number(discount) ?? 0);
+  const price = regularPrice - (discount ?? 0);
 
   return (
     <Card className="transform group-hover:shadow-xl transition-shadow duration-500 rounded-lg p-0 shadow-md">
@@ -53,7 +55,7 @@ const CabinGridCard = ({ cabin }: { cabin: Cabin }) => {
               <CabinCardLocation
                 country={country}
                 city={city}
-                center={[latitude.toNumber(), longitude.toNumber()]}
+                center={[latitude, longitude]}
               />
             </div>
             <CabinCardRating view="grid" cabinId={cabinId} />

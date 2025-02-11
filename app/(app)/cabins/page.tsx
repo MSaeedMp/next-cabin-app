@@ -15,6 +15,7 @@ const CabinsPage = async ({
 }) => {
   const queryObject: CabinSearchParamsType = await searchParams;
 
+
   return (
     <Container>
       <div className="grid md:grid-cols-[.9fr_3fr] md:pt-16 sm:pt-12 pt-8">
