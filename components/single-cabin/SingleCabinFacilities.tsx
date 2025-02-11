@@ -16,7 +16,7 @@ const SingleCabinFeatures = ({ features }: { features: CabinFeature[] }) => {
           className="flex items-center gap-4 border border-stone-200 md:py-4 py-3 px-5 md:px-6 rounded-full text-primary font-medium "
           key={index}
         >
-          <Icon className="w-5 h-5 md:w-6 md:h-6" />
+          {Icon && <Icon className="w-5 h-5 md:w-6 md:h-6" />}
           {name}
         </li>
       ))}
