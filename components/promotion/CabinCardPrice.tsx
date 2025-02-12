@@ -1,17 +1,17 @@
 import { formatCurrency } from "@/utils/helper";
 
 const CabinCardPrice = ({
-  regularPriceNum,
-  discountNum,
+  regularPrice,
+  discount,
 }: {
-  regularPriceNum: number;
-  discountNum: number;
+  regularPrice: number;
+  discount: number;
 }) => {
   return (
     <div className="flex items-center gap-3">
-      <span className="">{formatCurrency(discountNum)}</span>
+      <span className="">{formatCurrency(regularPrice)}</span>
       <span className="text-red-600 line-through text-sm">
-        {formatCurrency(regularPriceNum)}
+        {formatCurrency(discount)}
       </span>
     </div>
   );

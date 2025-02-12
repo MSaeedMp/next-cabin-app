@@ -26,10 +26,9 @@ const CabinCard = ({
     country,
     latitude,
     longitude,
+    regularPrice,
+    discount,
   } = cabin;
-
-  const regularPriceNum = Number(cabin.regularPrice);
-  const discountNum = Number(cabin.discount);
 
   return (
     <article className="group relative ">
@@ -46,8 +45,8 @@ const CabinCard = ({
               />
               {includePrice && (
                 <CabinCardPrice
-                  regularPriceNum={regularPriceNum}
-                  discountNum={discountNum}
+                  regularPrice={regularPrice}
+                  discount={discount ?? 0}
                 />
               )}
               <CabinCardRating cabinId={cabinId} view="home" />

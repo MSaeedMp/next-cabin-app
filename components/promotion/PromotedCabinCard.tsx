@@ -25,10 +25,7 @@ const PromotedCabinCard = ({ cabin }: { cabin?: Cabin }) => {
     discount,
   } = cabin;
 
-  const regularPriceNum = Number(regularPrice);
-  const discountNum = Number(discount);
-
-  const discountPercentage = ((discountNum / regularPriceNum) * 100).toFixed(0);
+  const discountPercentage = ((discount ?? 0 / regularPrice) * 100).toFixed(0);
 
   return (
     <article className="group relative ">
@@ -44,8 +41,8 @@ const PromotedCabinCard = ({ cabin }: { cabin?: Cabin }) => {
                 city={city}
               />
               <CabinCardPrice
-                regularPriceNum={regularPriceNum}
-                discountNum={discountNum}
+                regularPrice={regularPrice}
+                discount={discount ?? 0}
               />
               <CabinCardRating cabinId={cabinId} view="home" />
             </div>
