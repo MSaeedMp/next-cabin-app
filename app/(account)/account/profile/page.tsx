@@ -6,6 +6,10 @@ import SectionTitle from "@/components/Global/SectionTitle";
 import { auth } from "@/lib/auth";
 import { CustomCountryNameCodeType } from "@/utils/types";
 
+export const generateMetadata = () => {
+  return { title: "Profile" };
+};
+
 const ProfilePage = async () => {
   const countries: CustomCountryNameCodeType[] = await getCountriesNameCode();
   const session = await auth();

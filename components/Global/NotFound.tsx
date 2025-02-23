@@ -29,7 +29,7 @@ const NotFound = ({
       </p>
       <p className="text-base font-light text-muted-foreground mt-5 max-w-[400px]">
         {returnMsg}{" "}
-        <Link href={returnLink} className="font-bold">
+        <Link href={returnLink} className="font-bold hover:underline">
           here
         </Link>
         .

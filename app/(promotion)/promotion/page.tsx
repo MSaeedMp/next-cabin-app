@@ -7,6 +7,10 @@ import PromotedCabinCard from "@/components/promotion/PromotedCabinCard";
 import { fetchPromotedCabins } from "@/actions/cabin-action";
 import { Suspense } from "react";
 
+export const generateMetadata = () => {
+  return { title: "Promotions" };
+};
+
 const PromotionPage = async () => {
   return (
     <Container>

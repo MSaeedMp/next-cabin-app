@@ -8,13 +8,16 @@ import LoadingListCard from "@/components/Global/LoadingListCard";
 import LoadingGridCard from "@/components/Global/LoadingGridCard";
 import CabinsBox from "@/components/cabins/CabinsBox";
 
+export const generateMetadata = () => {
+  return { title: "Cabins" };
+};
+
 const CabinsPage = async ({
   searchParams,
 }: {
   searchParams: Promise<CabinSearchParamsType>;
 }) => {
   const queryObject: CabinSearchParamsType = await searchParams;
-
 
   return (
     <Container>

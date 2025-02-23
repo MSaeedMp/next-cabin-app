@@ -4,6 +4,10 @@ import SectionTitle from "@/components/Global/SectionTitle";
 import ScrollBox from "@/components/Global/ScrollBox";
 import WideCard from "@/components/promotion/WideCard";
 
+export const generateMetadata = () => {
+  return { title: "Account" };
+};
+
 const AccountPage = () => {
   return (
     <>

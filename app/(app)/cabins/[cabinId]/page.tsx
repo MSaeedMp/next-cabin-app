@@ -12,6 +12,17 @@ import NotFound from "@/components/Global/NotFound";
 import { fetchCabinById } from "@/actions/cabin-action";
 import { Separator } from "@/components/ui/separator";
 
+export const generateMetadata = async ({
+  params,
+}: {
+  params: Promise<{ cabinId: string }>;
+}) => {
+  const { cabinId } = await params;
+  const cabin = await fetchCabinById(cabinId);
+  const title = cabin?.name;
+  return { title: `Cabin ${title}` };
+};
+
 const SingleCabinPage = async ({
   params,
 }: {

@@ -2,6 +2,10 @@ import ReservationCardList from "@/components/account/ReservationCardList";
 import SectionSubTitle from "@/components/Global/SectionSubTitle";
 import SectionTitle from "@/components/Global/SectionTitle";
 
+export const generateMetadata = () => {
+  return { title: "Reservations" };
+};
+
 const ReservationPage = () => {
   return (
     <>

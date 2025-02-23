@@ -11,7 +11,7 @@ const interFont = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "900"],
+  weight: ["300", "400", "500", "700", "900"],
 });
 
 const archivoNarrow = Archivo_Narrow({
