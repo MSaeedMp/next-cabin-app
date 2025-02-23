@@ -25,7 +25,9 @@ const PromotedCabinCard = ({ cabin }: { cabin?: Cabin }) => {
     discount,
   } = cabin;
 
-  const discountPercentage = ((discount ?? 0 / regularPrice) * 100).toFixed(0);
+  const discountPercentage = (((discount || 0) / regularPrice) * 100).toFixed(
+    0
+  );
 
   return (
     <article className="group relative ">

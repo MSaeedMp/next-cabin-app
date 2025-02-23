@@ -3,12 +3,20 @@
 @tailwind utilities;
 
 :root {
-  --font-inter: "Inter", sans-serif;
-  --font-archivo-narrow: "ArchivoNarrow", sans-serif;
+  --font-inter: "Inter", sans-serif, Arial, Helvetica;
+  --font-archivo-narrow: "ArchivoNarrow", sans-serif, Arial, Helvetica;
+}
+
+.font-inter {
+  font-family: var(--font-inter);
+}
+
+.font-archivo-narrow {
+  font-family: var(--font-archivo-narrow);
 }
 
 body {
-  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter);
   font-weight: 400;
 }
 * {
@@ -18,14 +26,6 @@ body {
 html body[data-scroll-locked] {
   overflow: visible !important;
   margin-right: 0 !important;
-}
-
-.font-inter {
-  font-family: var(--font-inter);
-}
-
-.font-archivo-narrow {
-  font-family: var(--font-archivo-narrow);
 }
 
 @layer base {
