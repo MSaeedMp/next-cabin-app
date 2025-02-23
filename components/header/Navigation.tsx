@@ -8,9 +8,9 @@ const Navigation = async () => {
 
   return (
     <>
-      <div className="hidden md:flex items-center text-white capitalize font-archivo-narrow text-xl font-bold self-stretch gap-4">
+      <nav className="hidden md:flex items-center text-white capitalize font-archivo-narrow text-xl font-bold self-stretch gap-4">
         <NavigationLinks user={user} />
-      </div>
+      </nav>
       <div className="md:hidden flex">
         <CustomTriggerMenu />
       </div>

@@ -7,9 +7,9 @@ import { cn } from "@/lib/utils";
 
 const Footer = ({ bgColor }: { bgColor?: string }) => {
   return (
-    <div
+    <footer
       className={cn(
-        "p-10  mt-14 text-stone-50 flex flex-col justify-between",
+        "p-10 mt-14 text-stone-50 flex flex-col justify-between",
         bgColor
           ? bgColor
           : "bg-gradient-to-br from-primary via-blue-800 to-blue-700"
@@ -23,7 +23,7 @@ const Footer = ({ bgColor }: { bgColor?: string }) => {
           <CopyRight />
         </div>
       </Container>
-    </div>
+    </footer>
   );
 };
 export default Footer;
