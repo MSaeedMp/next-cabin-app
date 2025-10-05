@@ -7,7 +7,7 @@ const AccountLayout = ({
   children,
 }: Readonly<{ children: React.ReactNode }>) => {
   return (
-    <div>
+    <>
       <AccountHeader />
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-[16rem_1fr] gap-x-6">
@@ -16,7 +16,7 @@ const AccountLayout = ({
         </div>
       </Container>
       <Footer />
-    </div>
+    </>
   );
 };
 export default AccountLayout;
